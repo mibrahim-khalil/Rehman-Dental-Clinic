@@ -1,0 +1,41 @@
+.navbar-header {
+  background-color: var(--bg-light);
+  padding: 16px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo { display: flex; align-items: center; text-decoration: none; }
+.logo-badge { display: flex; flex-direction: column; }
+.logo-title { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--primary-navy); line-height: 1; }
+.logo-subtitle { font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--primary-teal); line-height: 1.2; letter-spacing: 2px; }
+.logo-tagline { font-size: 0.55rem; color: var(--primary-navy); font-weight: 600; letter-spacing: 0.5px; }
+
+.nav-menu { display: flex; align-items: center; gap: 24px; }
+.nav-link { font-size: 0.95rem; font-weight: 500; color: var(--text-dark); position: relative; padding: 4px 0; }
+.nav-link:hover, .nav-link.active { color: var(--primary-teal); font-weight: 600; }
+.nav-link.active::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background-color: var(--primary-teal); }
+
+.btn-appointment { background-color: var(--primary-teal); color: var(--white); padding: 10px 24px; border-radius: var(--radius-pill); font-size: 0.9rem; font-weight: 600; transition: 0.3s; white-space: nowrap; }
+.btn-appointment:hover { background-color: var(--teal-hover); transform: translateY(-2px); }
+
+.mobile-toggle { display: none; font-size: 1.5rem; color: var(--primary-navy); cursor: pointer; }
+.mobile-btn { display: none; }
+
+@media (max-width: 992px) {
+  .mobile-toggle { display: block; }
+  .desktop-btn { display: none; }
+  .nav-menu { position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--bg-light); flex-direction: column; padding: 20px 0; gap: 16px; box-shadow: var(--shadow-md); clip-path: circle(0.0% at 100% 0); transition: 0.4s; }
+  .nav-menu.active { clip-path: circle(141.4% at 100% 0); }
+  .mobile-btn { display: inline-block; margin-top: 10px; }
+}
