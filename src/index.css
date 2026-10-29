@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0f2b48;
+  --color-navy-deep: #0a1e33;
+  --color-mint-cloud: #eaf6f5;
+  --color-mint: #d8ecee;
+  --color-mint-deep: #c9e4e7;
+  --color-teal: #3ba4a4;
+  --color-teal-dark: #2b8383;
+  --color-muted: #6b7f93;
+
+  --font-display: "Bebas Neue", "Arial Narrow", sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-navy);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #bfe6e6;
+  color: #0a1e33;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------------------
+   Consistent layout container used across every section
+--------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: 1224px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 640px) {
+  .container {
+    padding-inline: 1.75rem;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: 2.5rem;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Scroll-reveal
+--------------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 0.61, 0.21, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Hero display-line entrance
+--------------------------------------------------------------------------- */
+.hero-line {
+  display: block;
+  overflow: hidden;
+}
+.hero-line > span {
+  display: inline-block;
+  transform: translateY(112%);
+  animation: rise-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes rise-in {
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Campaign ticker marquee
+--------------------------------------------------------------------------- */
+.marquee {
+  overflow: hidden;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: marquee 34s linear infinite;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Texture for placeholder image boxes (team / gallery)
+--------------------------------------------------------------------------- */
+.placeholder-texture {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.35) 0 2px,
+    transparent 2px 16px
+  );
+}
+
+/* ---------------------------------------------------------------------------
+   Scrollbar
+--------------------------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #eef4f6;
+}
+::-webkit-scrollbar-thumb {
+  background: #b9cbd6;
+  border-radius: 8px;
+  border: 2px solid #eef4f6;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3ba4a4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .hero-line > span {
+    transform: none;
+    animation: none;
+  }
+  .marquee-track {
+    animation: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
