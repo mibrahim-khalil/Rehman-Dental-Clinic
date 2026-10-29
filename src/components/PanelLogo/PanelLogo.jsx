@@ -19,8 +19,8 @@ export default function PanelLogo({ panel, size = "lg", className = "" }) {
 
   const sizeClass =
     size === "sm"
-      ? "h-10 w-auto max-w-[90px] object-contain"
-      : "h-14 w-auto max-w-[140px] object-contain";
+      ? "h-12 w-auto max-w-[110px] object-contain"
+      : "h-16 w-auto max-w-[180px] object-contain"; // Increased size for larger display!
 
   if (!src) {
     return (

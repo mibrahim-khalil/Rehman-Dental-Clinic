@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
-// Image import matching your folder structure (src/assets/images/hero/dental-hero.png)
+// Image import
 import heroImage from "../../assets/images/hero/dental-hero.png";
 
 // Data imports
@@ -19,7 +19,7 @@ import panels from "../../data/panels";
 import { featuredServices } from "../../data/services";
 import testimonials from "../../data/testimonials";
 
-// Component imports matching your component subfolders
+// Component imports
 import CTABand from "../../components/CTABand/CTABand";
 import PanelCard from "../../components/PanelCard/PanelCard";
 import PanelLogo from "../../components/PanelLogo/PanelLogo";
@@ -160,13 +160,14 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center gap-x-10 gap-y-7 lg:justify-end">
-              {panels.map((panel) => (
-                <div key={panel.id} className="flex flex-col items-center gap-2.5">
-                  <PanelLogo panel={panel} size="sm" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-navy/45">
-                    {panel.shortLabel}
-                  </span>
+            {/* NEW GRID ALIGNMENT: 4 columns. PTV (index 4) shifts to col-start-2 to sit perfectly under NEPRA */}
+            <div className="grid w-full flex-1 grid-cols-2 items-center justify-items-center gap-x-6 gap-y-10 md:grid-cols-4 lg:max-w-3xl">
+              {panels.map((panel, index) => (
+                <div
+                  key={panel.id}
+                  className={index === 4 ? "md:col-start-2" : ""}
+                >
+                  <PanelLogo panel={panel} size="lg" />
                 </div>
               ))}
             </div>

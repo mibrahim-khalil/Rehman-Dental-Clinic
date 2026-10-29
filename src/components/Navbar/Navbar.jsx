@@ -16,28 +16,18 @@ const NAV_LINKS = [
 
 export function Logo({ dark = false, compact = false }) {
   return (
-    <Link to="/" className="flex shrink-0 items-center gap-3" aria-label="Rehman Dental Clinic — home">
+    <Link
+      to="/"
+      className="flex shrink-0 items-center"
+      aria-label="Rehman Dental Clinic — home"
+    >
       <img
         src={logoImg}
         alt="Rehman Dental Clinic"
-        className={`object-contain ${compact ? "h-10 w-10" : "h-11 w-11"} rounded-2xl`}
+        className={`object-contain ${
+          compact ? "h-12 w-auto" : "h-16 w-auto sm:h-[4.25rem]"
+        }`}
       />
-      <span className="leading-none">
-        <span
-          className={`block font-display text-[1.45rem] tracking-[0.04em] ${
-            dark ? "text-white" : "text-navy"
-          }`}
-        >
-          REHMAN DENTAL
-        </span>
-        <span
-          className={`mt-1 block text-[9.5px] font-extrabold uppercase tracking-[0.34em] ${
-            dark ? "text-teal" : "text-teal-dark"
-          }`}
-        >
-          {compact ? "Islamabad" : "Clinic · Islamabad"}
-        </span>
-      </span>
     </Link>
   );
 }
@@ -72,7 +62,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50">
-      {/* top utility bar */}
+      {/* ---------------------------------------------------- top utility bar */}
       <div
         className={`overflow-hidden bg-navy-deep text-white transition-all duration-300 ${
           scrolled ? "max-h-0 opacity-0" : "max-h-12 opacity-100"
@@ -99,13 +89,14 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* main nav */}
+      {/* ---------------------------------------------------------- main nav */}
       <div
         className={`bg-white/95 backdrop-blur transition-shadow duration-300 ${
           scrolled ? "shadow-[0_10px_36px_-14px_rgba(15,43,72,0.35)]" : "border-b border-navy/5"
         }`}
       >
-        <div className="container flex h-[4.5rem] items-center justify-between gap-4">
+        {/* Adjusted height here so the bigger logo fits perfectly */}
+        <div className="container flex h-[5.5rem] items-center justify-between gap-4">
           <Logo />
 
           <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
@@ -158,7 +149,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* mobile drawer */}
+      {/* ------------------------------------------------------- mobile drawer */}
       <div className={`fixed inset-0 z-[70] lg:hidden ${open ? "" : "pointer-events-none"}`}>
         <div
           className={`absolute inset-0 bg-navy-deep/60 backdrop-blur-sm transition-opacity duration-300 ${

@@ -7,8 +7,7 @@ import { telHref, WA_APPOINTMENT } from "../../data/clinic";
 import CTABand from "../../components/CTABand/CTABand";
 import PageHero from "../../components/PageHero/PageHero";
 import Reveal from "../../components/Reveal/Reveal";
-import { getServiceIcon } from "../../components/serviceIcons";
-import { PriceTag } from "../../components/ServiceCard/ServiceCard";
+import ServiceCard from "../../components/ServiceCard/ServiceCard"; // Imported big card!
 
 const FILTERS = [{ id: "all", label: "All" }, ...serviceCategories];
 
@@ -95,30 +94,13 @@ export default function Services() {
                 </span>
               </Reveal>
 
-              <ul className="mt-7 grid gap-4 md:grid-cols-2">
-                {items.map((service, index) => {
-                  const Icon = getServiceIcon(service.icon);
-                  return (
-                    <Reveal as="li" key={service.id} delay={(index % 2) * 60}>
-                      <article className="group flex h-full items-start gap-4 rounded-2xl bg-white p-5 ring-1 ring-navy/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-teal/40 sm:p-6">
-                        <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-mint-cloud text-teal transition-colors duration-300 group-hover:bg-mint">
-                          <Icon className="size-[22px]" strokeWidth={1.9} />
-                        </span>
-                        <div className="min-w-0 flex-1">
-                          <h3 className="font-bold text-navy transition-colors group-hover:text-teal">
-                            {service.name}
-                          </h3>
-                          <p className="mt-1 text-sm leading-relaxed text-muted">
-                            {service.description}
-                          </p>
-                        </div>
-                        <div className="shrink-0 text-right">
-                          <PriceTag price={service.price} consult={service.consult} compact />
-                        </div>
-                      </article>
-                    </Reveal>
-                  );
-                })}
+              {/* Renders the big beautiful cards in a grid exactly like the Home page */}
+              <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {items.map((service, index) => (
+                  <li key={service.id} className="flex flex-col">
+                    <ServiceCard service={service} index={index} />
+                  </li>
+                ))}
               </ul>
             </section>
           );
