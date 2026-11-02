@@ -10,8 +10,10 @@ import {
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
-// TEMPORARY: Using hero image until client provides the real awareness camp image
-import campImage from "../../assets/images/hero/dental-hero.png";
+// Real awareness camp images
+import camp1Img from "../../assets/images/awareness/camp1.jpeg";
+import camp2Img from "../../assets/images/awareness/camp2.jpg";
+import camp3Img from "../../assets/images/awareness/camp3.jpg";
 
 import { telHref, waHref } from "../../data/clinic";
 import CTABand from "../../components/CTABand/CTABand";
@@ -27,21 +29,25 @@ const PROGRAMS = [
     icon: Tent,
     title: "Free Dental Screening Camps",
     text: "On-site oral health screenings with basic checkups, honest guidance, and referrals — free for communities, workplaces, and housing societies.",
+    image: camp1Img,
   },
   {
     icon: GraduationCap,
     title: "School & University Sessions",
     text: "Interactive awareness sessions for students covering brushing technique, diet, and building lifelong dental habits early.",
+    image: camp2Img,
   },
   {
     icon: Sparkles,
     title: "Oral Hygiene Education",
     text: "Practical, hands-on demonstrations of proper brushing, flossing, and daily care routines for every age group.",
+    image: camp3Img,
   },
   {
     icon: Building2,
     title: "Corporate Dental Health Sessions",
     text: "Workplace wellbeing sessions for staff — plus on-site screening days for panel and partner organizations.",
+    image: camp1Img,
   },
 ];
 
@@ -119,7 +125,7 @@ export default function Awareness() {
 
           <Reveal delay={200} className="relative">
             <img
-              src={campImage}
+              src={camp1Img}
               alt="Free dental camp organized by Rehman Dental Care"
               className="aspect-[4/3] w-full rounded-[2rem] object-cover ring-1 ring-white/20"
               loading="lazy"
@@ -152,13 +158,25 @@ export default function Awareness() {
                 key={program.title}
                 as="article"
                 delay={index * 80}
-                className="flex h-full flex-col rounded-3xl bg-white p-7 ring-1 ring-navy/5 transition-all duration-300 hover:-translate-y-1.5 hover:bg-mint-cloud hover:shadow-xl"
+                className="flex h-full flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-navy/5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
               >
-                <span className="grid size-13 place-items-center rounded-2xl bg-mint text-teal-dark">
-                  <program.icon className="size-6" strokeWidth={1.8} />
-                </span>
-                <h3 className="mt-5 text-lg font-bold leading-snug text-navy">{program.title}</h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{program.text}</p>
+                {/* Program Image */}
+                <div className="relative h-36 w-full overflow-hidden bg-mint-cloud">
+                  <img
+                    src={program.image}
+                    alt={program.title}
+                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                    loading="lazy"
+                  />
+                  <span className="absolute left-3 top-3 grid size-9 place-items-center rounded-xl bg-white/90 text-teal-dark shadow-sm">
+                    <program.icon className="size-5" strokeWidth={1.8} />
+                  </span>
+                </div>
+
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="text-lg font-bold leading-snug text-navy">{program.title}</h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{program.text}</p>
+                </div>
               </Reveal>
             ))}
           </div>

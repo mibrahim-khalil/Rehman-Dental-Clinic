@@ -175,7 +175,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --------------------------------------- PANEL CARDS PREVIEW */}
+      {/* --------------------------------------- PANEL CARDS PREVIEW (SHOW 3 ONLY) */}
       <section className="py-20 sm:py-24">
         <div className="container">
           <SectionHeader
@@ -186,7 +186,7 @@ export default function Home() {
           />
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {panels.map((panel, index) => (
+            {panels.slice(0, 3).map((panel, index) => (
               <PanelCard key={panel.id} panel={panel} index={index} />
             ))}
           </div>

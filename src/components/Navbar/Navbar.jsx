@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { ChevronRight, Clock, MapPin, Phone, X } from "lucide-react";
+import { ChevronRight, Clock, Phone, X } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import clinic, { telHref, WA_APPOINTMENT } from "../../data/clinic";
 import logoImg from "../../assets/images/logo/logo.png";
@@ -62,40 +62,12 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50">
-      {/* ---------------------------------------------------- top utility bar */}
-      <div
-        className={`overflow-hidden bg-navy-deep text-white transition-all duration-300 ${
-          scrolled ? "max-h-0 opacity-0" : "max-h-12 opacity-100"
-        }`}
-      >
-        <div className="container flex items-center justify-end gap-6 py-2.5 text-xs font-medium md:justify-between">
-          <div className="flex items-center gap-6">
-            <span className="hidden items-center gap-2 text-white/70 md:inline-flex">
-              <MapPin className="size-3.5 text-teal" />
-              {clinic.addressShort}
-            </span>
-            <span className="hidden items-center gap-2 text-white/70 md:inline-flex">
-              <Clock className="size-3.5 text-teal" />
-              {clinic.hoursShort}
-            </span>
-          </div>
-          <a
-            href={telHref}
-            className="inline-flex items-center gap-2 font-bold tracking-wide text-white transition-colors hover:text-teal"
-          >
-            <Phone className="size-3.5 text-teal" />
-            {clinic.phoneDisplay}
-          </a>
-        </div>
-      </div>
-
       {/* ---------------------------------------------------------- main nav */}
       <div
         className={`bg-white/95 backdrop-blur transition-shadow duration-300 ${
           scrolled ? "shadow-[0_10px_36px_-14px_rgba(15,43,72,0.35)]" : "border-b border-navy/5"
         }`}
       >
-        {/* Adjusted height here so the bigger logo fits perfectly */}
         <div className="container flex h-[5.5rem] items-center justify-between gap-4">
           <Logo />
 
