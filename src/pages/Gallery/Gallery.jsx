@@ -11,14 +11,33 @@ import {
   Tent,
   X,
 } from "lucide-react";
-import heroImage from "../../assets/images/hero/dental-hero.png";
 
 import PageHero from "../../components/PageHero/PageHero";
 import Reveal from "../../components/Reveal/Reveal";
 
-// TEMPORARY: Using hero image as fallback for the missing images
-const clinicImage = heroImage;
-const campImage = heroImage;
+// Import Real Photos (.jpeg)
+import img2 from "../../assets/images/gallery/image2.jpeg";
+import img3 from "../../assets/images/gallery/image3.jpeg";
+import img4 from "../../assets/images/gallery/image4.jpeg";
+import img5 from "../../assets/images/gallery/image5.jpeg";
+import img6 from "../../assets/images/gallery/image6.jpeg";
+import img7 from "../../assets/images/gallery/image7.jpeg";
+import img8 from "../../assets/images/gallery/image8.jpeg";
+import img9 from "../../assets/images/gallery/image9.jpeg";
+import img13 from "../../assets/images/gallery/image13.jpeg";
+import img14 from "../../assets/images/gallery/image14.jpeg";
+import img15 from "../../assets/images/gallery/image15.jpeg";
+import img16 from "../../assets/images/gallery/image16.jpeg";
+import img17 from "../../assets/images/gallery/image17.jpeg";
+
+// Import Real Videos (.mp4)
+import vid0 from "../../assets/videos/video.mp4";
+import vid1 from "../../assets/videos/video1.mp4";
+import vid2 from "../../assets/videos/video2.mp4";
+import vid3 from "../../assets/videos/video3.mp4";
+import vid4 from "../../assets/videos/video4.mp4";
+import vid5 from "../../assets/videos/video5.mp4";
+import vid6 from "../../assets/videos/video6.mp4";
 
 const CATEGORIES = ["All", "Clinic Interior", "Equipment", "Patient Care", "Dental Camps"];
 
@@ -36,11 +55,6 @@ const TONES = {
   cloud: "bg-mint-cloud text-navy",
 };
 
-/**
- * type "image"  → real photography
- * type "photo"  → stylized placeholder (fresh clinic photography in progress)
- * type "video"  → video placeholder card
- */
 const ITEMS = [
   {
     id: 1,
@@ -48,34 +62,35 @@ const ITEMS = [
     category: "Patient Care",
     title: "Gentle Treatment In Progress",
     caption: "A routine procedure performed with our signature pain-free technique.",
-    src: heroImage,
+    src: img3,
     ratio: "3 / 4",
   },
   {
     id: 2,
-    type: "photo",
+    type: "image",
     category: "Clinic Interior",
     title: "Reception & Waiting Lounge",
     caption: "A calm, comfortable welcome area for patients and families.",
-    tone: "navy",
+    src: img2,
     ratio: "4 / 3",
   },
   {
     id: 3,
     type: "video",
-    category: "Patient Care",
-    title: "Clinic Tour — Coming Soon",
-    caption: "A full video walkthrough of Rehman Dental Care is in production.",
+    category: "Clinic Interior",
+    title: "Clinic Tour",
+    caption: "A full video walkthrough of Rehman Dental Care.",
+    src: vid0,
     duration: "01:24",
     ratio: "4 / 3",
   },
   {
     id: 4,
-    type: "photo",
+    type: "image",
     category: "Equipment",
     title: "Sterilization Station",
     caption: "Class-B sterilization — every single instrument, every single time.",
-    tone: "teal",
+    src: img4,
     ratio: "1 / 1",
   },
   {
@@ -84,25 +99,25 @@ const ITEMS = [
     category: "Clinic Interior",
     title: "Modern Operatory",
     caption: "Sterile, well-lit treatment rooms with up-to-date equipment.",
-    src: clinicImage,
+    src: img5,
     ratio: "4 / 3",
   },
   {
     id: 6,
-    type: "photo",
+    type: "image",
     category: "Dental Camps",
     title: "School Awareness Visit",
     caption: "Teaching students the right way to brush and care for their teeth.",
-    tone: "mint",
+    src: img6,
     ratio: "3 / 4",
   },
   {
     id: 7,
-    type: "photo",
+    type: "image",
     category: "Equipment",
     title: "Digital Radiology Setup",
     caption: "Low-dose digital imaging for fast, accurate diagnosis.",
-    tone: "cloud",
+    src: img7,
     ratio: "4 / 3",
   },
   {
@@ -111,7 +126,7 @@ const ITEMS = [
     category: "Dental Camps",
     title: "Community Screening Camp",
     caption: "Free dental screenings for families at our community camps.",
-    src: campImage,
+    src: img8,
     ratio: "4 / 3",
   },
   {
@@ -120,25 +135,26 @@ const ITEMS = [
     category: "Dental Camps",
     title: "Camp Highlights Reel",
     caption: "Video highlights from our latest free dental camp.",
+    src: vid2,
     duration: "00:58",
     ratio: "3 / 4",
   },
   {
     id: 10,
-    type: "photo",
+    type: "image",
     category: "Clinic Interior",
     title: "Consultation Corner",
     caption: "A private space for treatment planning and patient counseling.",
-    tone: "cloud",
+    src: img9,
     ratio: "1 / 1",
   },
   {
     id: 11,
-    type: "photo",
+    type: "image",
     category: "Patient Care",
     title: "Every Smile, Followed Up",
     caption: "Post-treatment reviews and follow-up calls for every patient.",
-    tone: "mint",
+    src: img13,
     ratio: "4 / 3",
   },
   {
@@ -147,7 +163,84 @@ const ITEMS = [
     category: "Equipment",
     title: "Our Technology Stack",
     caption: "A closer look at the equipment behind pain-free dentistry.",
+    src: vid3,
     duration: "02:10",
+    ratio: "4 / 3",
+  },
+  {
+    id: 13,
+    type: "image",
+    category: "Clinic Interior",
+    title: "Advanced Diagnostics",
+    caption: "High-tech diagnostic tools for precise treatment planning.",
+    src: img14,
+    ratio: "4 / 3",
+  },
+  {
+    id: 14,
+    type: "video",
+    category: "Patient Care",
+    title: "Patient Experience",
+    caption: "A glimpse into our comfortable and pain-free procedures.",
+    src: vid1,
+    duration: "01:15",
+    ratio: "3 / 4",
+  },
+  {
+    id: 15,
+    type: "image",
+    category: "Equipment",
+    title: "Precision Tools",
+    caption: "State-of-the-art dental instruments for optimal results.",
+    src: img15,
+    ratio: "1 / 1",
+  },
+  {
+    id: 16,
+    type: "video",
+    category: "Clinic Interior",
+    title: "Facilities Overview",
+    caption: "Take a look around our modern and hygienic clinic.",
+    src: vid4,
+    duration: "01:45",
+    ratio: "4 / 3",
+  },
+  {
+    id: 17,
+    type: "image",
+    category: "Clinic Interior",
+    title: "Comfortable Setup",
+    caption: "Ergonomic dental chairs designed for patient relaxation.",
+    src: img16,
+    ratio: "4 / 3",
+  },
+  {
+    id: 18,
+    type: "video",
+    category: "Dental Camps",
+    title: "Community Outreach",
+    caption: "Highlights from our recent oral health awareness drives.",
+    src: vid5,
+    duration: "02:00",
+    ratio: "3 / 4",
+  },
+  {
+    id: 19,
+    type: "image",
+    category: "Patient Care",
+    title: "Happy Patient",
+    caption: "Restoring confidence with beautiful, healthy smiles.",
+    src: img17,
+    ratio: "3 / 4",
+  },
+  {
+    id: 20,
+    type: "video",
+    category: "Equipment",
+    title: "Modern Dentistry",
+    caption: "Utilizing the latest technology for efficient dental care.",
+    src: vid6,
+    duration: "01:30",
     ratio: "4 / 3",
   },
 ];
@@ -156,18 +249,35 @@ const ITEMS = [
 function ItemVisual({ item, large = false }) {
   const CategoryIcon = CATEGORY_ICONS[item.category] ?? ImageIcon;
 
-  if (item.type === "image") {
+  // 1. If it's a video AND we are in the lightbox (large), play the video!
+  if (item.type === "video" && item.src && large) {
+    return (
+      <video
+        src={item.src}
+        className="absolute inset-0 h-full w-full object-contain bg-black"
+        controls
+        autoPlay
+        playsInline
+      />
+    );
+  }
+
+  // 2. If it's an image, display the image
+  if (item.type === "image" && item.src) {
     return (
       <img
         src={item.src}
         alt={item.title}
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        className={`absolute inset-0 h-full w-full ${
+          large ? "object-contain bg-black/5" : "object-cover transition-transform duration-500 group-hover:scale-105"
+        }`}
         loading="lazy"
       />
     );
   }
 
-  const tone = item.type === "video" ? "navy" : item.tone;
+  // 3. Fallback for videos in the grid (shows the beautiful Play button placeholder)
+  const tone = item.type === "video" ? "navy" : (item.tone || "cloud");
   const onDark = tone === "navy" || tone === "teal";
 
   return (
@@ -184,7 +294,7 @@ function ItemVisual({ item, large = false }) {
             <Play className={`${large ? "size-8" : "size-6"} fill-white text-white`} />
           </span>
           <span className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.22em] text-white/80">
-            Video · {item.duration}
+            Video · {item.duration || "01:00"}
           </span>
         </>
       ) : (
@@ -308,8 +418,7 @@ export default function Gallery() {
 
           <Reveal className="mt-8 text-center">
             <p className="text-sm text-muted">
-              Some cards are placeholders while we prepare fresh clinic photography — follow us for
-              updates.
+              Explore our clinic facilities, patient treatments, and video walkthroughs.
             </p>
           </Reveal>
         </div>
