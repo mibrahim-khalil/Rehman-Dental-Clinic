@@ -5,6 +5,10 @@ import CTABand from "../../components/CTABand/CTABand";
 import PageHero from "../../components/PageHero/PageHero";
 import Reveal from "../../components/Reveal/Reveal";
 
+// Import Team Photos
+import doctor1Img from "../../assets/images/team/doctor1.png";
+import doctor2Img from "../../assets/images/team/doctor2.png";
+
 const TEAM = [
   {
     badge: "Lead Dentist",
@@ -12,6 +16,7 @@ const TEAM = [
     name: "Dr. Aneela Rehman",
     role: "Dental Surgeon",
     credentials: "BDS, RDS, PMDC Regd.",
+    image: doctor1Img,
     description:
       "Provides compassionate, modern dental care with a focus on preventive and restorative dentistry — gentle, ethical, and always patient-first. Every treatment plan is explained clearly before a single instrument is picked up.",
     cta: "Book With Dr. Aneela",
@@ -19,12 +24,13 @@ const TEAM = [
   {
     badge: "Operations",
     badgeStyle: "bg-navy text-white",
-    name: "Sir Adnan Khan",
+    name: "Dr. Eman Zehra",
     role: "Operations Manager / Clinic Director",
     credentials: "Patient Coordination · Panels & Appointments",
+    image: doctor2Img,
     description:
       "Handles patient coordination, panels and corporate queries, appointment scheduling, and day-to-day clinic operations — your first point of contact for anything Rehman Dental Care.",
-    cta: "Talk To Adnan",
+    cta: "Talk To Dr. Eman",
   },
 ];
 
@@ -47,23 +53,36 @@ export default function Team() {
                 delay={index * 120}
                 className="flex h-full flex-col overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-navy/5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:ring-teal/25"
               >
-                {/* grey photo placeholder */}
-                <div className="placeholder-texture relative grid aspect-[16/9] place-items-center bg-[#d6e0e9]">
-                  <div className="flex flex-col items-center gap-3 text-muted">
-                    <span className="grid size-16 place-items-center rounded-full bg-white/70 shadow-inner">
-                      <UserRound className="size-8" strokeWidth={1.6} />
-                    </span>
-                    <span className="text-[11px] font-bold uppercase tracking-[0.28em]">
-                      Photo Coming Soon
-                    </span>
-                  </div>
+                {/* Photo Header */}
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-mint-cloud">
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  ) : (
+                    <div className="placeholder-texture relative grid h-full w-full place-items-center bg-[#d6e0e9]">
+                      <div className="flex flex-col items-center gap-3 text-muted">
+                        <span className="grid size-16 place-items-center rounded-full bg-white/70 shadow-inner">
+                          <UserRound className="size-8" strokeWidth={1.6} />
+                        </span>
+                        <span className="text-[11px] font-bold uppercase tracking-[0.28em]">
+                          Photo Coming Soon
+                        </span>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Badge */}
                   <span
-                    className={`absolute left-5 top-5 rounded-full px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-wider ${member.badgeStyle}`}
+                    className={`absolute left-5 top-5 rounded-full px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-wider shadow-sm ${member.badgeStyle}`}
                   >
                     {member.badge}
                   </span>
                 </div>
 
+                {/* Details Section */}
                 <div className="flex flex-1 flex-col p-7 sm:p-9">
                   <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-teal">
                     {member.role}
@@ -89,7 +108,7 @@ export default function Team() {
             ))}
           </div>
 
-          {/* ------------------------------------------ community message */}
+          {/* Community Message */}
           <Reveal className="relative mx-auto mt-16 max-w-4xl overflow-hidden rounded-[2rem] bg-mint px-8 py-12 text-center ring-1 ring-navy/5 sm:px-14">
             <Quote className="mx-auto size-10 text-teal" aria-hidden="true" />
             <p className="mt-5 font-display text-3xl leading-[1.05] text-navy sm:text-4xl">
