@@ -24,13 +24,13 @@ const TEAM = [
   {
     badge: "Operations",
     badgeStyle: "bg-navy text-white",
-    name: "Dr. Eman Zehra",
+    name: "Dr. Aneela Rehman",
     role: "Operations Manager / Clinic Director",
     credentials: "Patient Coordination · Panels & Appointments",
     image: doctor2Img,
     description:
       "Handles patient coordination, panels and corporate queries, appointment scheduling, and day-to-day clinic operations — your first point of contact for anything Rehman Dental Care.",
-    cta: "Talk To Dr. Eman",
+    cta: "Talk To Dr. Aleena",
   },
 ];
 
