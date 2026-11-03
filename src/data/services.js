@@ -1,9 +1,25 @@
+// Import All 19 Unique Service Images
 import scalingPolishingImg from '../assets/images/services/scaling-polishing.png';
-import dentalImplantsImg from '../assets/images/services/dental-implants.jpg';
 import rootCanalImg from '../assets/images/services/root-canal.jpg';
-import bracesAlignersImg from '../assets/images/services/braces-aligners.png';
-import crownsBridgesImg from '../assets/images/services/crowns-bridges.jpg';
-import toothExtractionImg from '../assets/images/services/tooth-extraction.png';
+import simpleFillingImg from '../assets/images/services/simple-filling.jpg';
+import laserFillingImg from '../assets/images/services/laser-filling.jpg';
+import pulpotomyImg from '../assets/images/services/pulpotomy.png';
+import extractionAnteriorsImg from '../assets/images/services/extraction-anteriors.jpg';
+import extractionPosteriorsImg from '../assets/images/services/extraction-posteriors.jpg';
+import laserWhiteningImg from '../assets/images/services/laser-whitening.jpg';
+import dentalJewelryImg from '../assets/images/services/dental-jewelry.jpg';
+
+import metalCrownImg from '../assets/images/services/metal-crown.jpg';
+import pfmCrownImg from '../assets/images/services/pfm-crown.jpg';
+import goldCrownImg from '../assets/images/services/gold-crown.jpeg';
+import zirconiumCrownImg from '../assets/images/services/zirconium-crown.jpg';
+import denturesImg from '../assets/images/services/dentures.jpg';
+import ccPlatesImg from '../assets/images/services/cc-plates.jpg';
+import veneersImg from '../assets/images/services/veneers.jpg';
+
+import bracesImg from '../assets/images/services/braces.jpg';
+import alignersImg from '../assets/images/services/aligners.jpg';
+import dentalImplantsImg from '../assets/images/services/dental-implants.jpg';
 
 export const serviceCategories = [
   { id: "dental-services", label: "Dental Services" },
@@ -36,7 +52,7 @@ export const services = [
     name: "Simple Filling",
     category: "dental-services",
     price: "1,200/-",
-    image: scalingPolishingImg,
+    image: simpleFillingImg,
     description: "Durable restorations for small to medium cavities, shaped to your natural bite.",
   },
   {
@@ -44,7 +60,7 @@ export const services = [
     name: "Laser Filling",
     category: "dental-services",
     price: "3,000/-",
-    image: scalingPolishingImg,
+    image: laserFillingImg,
     description: "Light-cured, high-precision fillings for stronger, longer-lasting repairs.",
   },
   {
@@ -52,7 +68,7 @@ export const services = [
     name: "Pulpotomy",
     category: "dental-services",
     price: "3,500/-",
-    image: rootCanalImg,
+    image: pulpotomyImg,
     description: "Gentle pulp therapy that preserves baby and young permanent teeth.",
   },
   {
@@ -60,7 +76,7 @@ export const services = [
     name: "Extraction (Anteriors)",
     category: "dental-services",
     price: "1,000/-",
-    image: toothExtractionImg,
+    image: extractionAnteriorsImg,
     description: "Safe, painless removal of front teeth with complete aftercare guidance.",
   },
   {
@@ -68,7 +84,7 @@ export const services = [
     name: "Extraction (Posteriors)",
     category: "dental-services",
     price: "2,500/-",
-    image: toothExtractionImg,
+    image: extractionPosteriorsImg,
     description: "Comfortable removal of molars and premolars — including difficult cases.",
   },
   {
@@ -77,7 +93,7 @@ export const services = [
     category: "dental-services",
     price: "30,000/-",
     featured: true,
-    image: scalingPolishingImg,
+    image: laserWhiteningImg,
     description: "Single-session professional whitening that lifts years of stains, several shades brighter.",
   },
   {
@@ -85,7 +101,7 @@ export const services = [
     name: "Dental Jewelry",
     category: "dental-services",
     price: "10,000/-",
-    image: scalingPolishingImg,
+    image: dentalJewelryImg,
     description: "Trendy tooth gems and crystals, applied safely by a dental professional.",
   },
 
@@ -95,7 +111,7 @@ export const services = [
     name: "Metal Crown",
     category: "dental-works",
     price: "4,500/-",
-    image: crownsBridgesImg,
+    image: metalCrownImg,
     description: "Strong full-metal crowns for back teeth that carry heavy chewing loads.",
   },
   {
@@ -103,7 +119,7 @@ export const services = [
     name: "PFM Crown",
     category: "dental-works",
     price: "5,500/-",
-    image: crownsBridgesImg,
+    image: pfmCrownImg,
     description: "Porcelain-fused-to-metal crowns balancing strength with a natural look.",
   },
   {
@@ -111,7 +127,7 @@ export const services = [
     name: "Gold Crown",
     category: "dental-works",
     price: "6,000/-",
-    image: crownsBridgesImg,
+    image: goldCrownImg,
     description: "Premium gold crowns — biocompatible, precise, and gentle on opposing teeth.",
   },
   {
@@ -120,7 +136,7 @@ export const services = [
     category: "dental-works",
     price: "20,000/-",
     featured: true,
-    image: crownsBridgesImg,
+    image: zirconiumCrownImg,
     description: "Metal-free zirconia crowns with lifelike translucency and top-tier strength.",
   },
   {
@@ -128,7 +144,7 @@ export const services = [
     name: "Dentures",
     category: "dental-works",
     consult: true,
-    image: crownsBridgesImg,
+    image: denturesImg,
     description: "Complete and partial dentures tailored for fit, comfort, and confidence.",
   },
   {
@@ -136,7 +152,7 @@ export const services = [
     name: "C-C Plates",
     category: "dental-works",
     consult: true,
-    image: crownsBridgesImg,
+    image: ccPlatesImg,
     description: "Cast partial (C-C) plates designed for secure, discreet tooth replacement.",
   },
   {
@@ -144,7 +160,7 @@ export const services = [
     name: "Veneers",
     category: "dental-works",
     consult: true,
-    image: crownsBridgesImg,
+    image: veneersImg,
     description: "Wafer-thin porcelain veneers to reshape, resize, and brighten your smile.",
   },
 
@@ -155,7 +171,7 @@ export const services = [
     category: "specialty",
     price: "1,20,000/-",
     featured: true,
-    image: bracesAlignersImg,
+    image: bracesImg,
     description: "Fixed orthodontic treatment that aligns crowded, spaced, or misaligned teeth.",
   },
   {
@@ -163,7 +179,7 @@ export const services = [
     name: "Aligners",
     category: "specialty",
     price: "1,60,000/-",
-    image: bracesAlignersImg,
+    image: alignersImg,
     description: "Nearly invisible clear aligner therapy for discreet smile straightening.",
   },
   {
